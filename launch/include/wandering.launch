@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- ALERT LAUNCH THE WANDERING NODE!!! -->
+  <include file="$(find ros_robot_wandering_demo)/launch/wandering_demo.launch">
+ 
+</launch>

@@ -1,0 +1,33 @@
+topics:
+- name    : safety
+  topic   : safety_controller/cmd_vel
+  timeout : 0.1
+  priority: 5
+- name    : manual
+  topic   : manual/cmd_vel
+  timeout : 0.1
+  priority: 4
+- name    : android
+  topic   : android/cmd_vel
+  timeout : 0.1
+  priority: 3
+- name    : joy
+  topic   : joy/cmd_vel
+  timeout : 0.1
+  priority: 3
+- name    : move_base
+  topic   : move_base/cmd_vel
+  timeout : 0.1
+  priority: 2
+- name    : robot_wandering_node
+  topic   : wandering/cmd_vel
+  timeout : 0.1
+  priority: 1
+
+
+locks:
+- name    : e_stop
+  topic   : e_stop
+  timeout : 0.0    
+  priority: 255
+

@@ -1,0 +1,20 @@
+<launch>
+    <arg name="M_PI" value="3.1415926535897931"/>
+    <!-- Start ROS communication between the robot's computer and Linorobot base -->
+    <node pkg="rosserial_python" name="rosserial_lino" type="serial_node.py" output="screen">
+        <param name="port" value="/dev/linobase" />
+        <param name="baud" value="115200" />
+    </node>
+
+    <!-- IMU Relay and Filter -->
+    <include file="$(find linorobot)/launch/include/imu/imu.launch" />
+
+    <!-- Publish Linorobot odometry -->
+    <node pkg="linorobot" name="lino_base_node" type="lino_base_node" />
+
+    <!-- Publish Linorobot Ultrasonic scan -->
+    <node pkg="linorobot" name="PingToScan" type="ultrasonic_to_laser_scan.py" />
+
+    <!-- Run Linorobot compatible laser drivers -->
+    <include file="$(find linorobot)/launch/include/laser.launch" />
+</launch>

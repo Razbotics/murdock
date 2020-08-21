@@ -1,0 +1,11 @@
+<launch>
+
+  <include file="$(find linorobot)/launch/bringup.launch"/>
+  <include file="$(find linorobot)/launch/include/model_robot.launch"/>
+  <include file="$(find linorobot)/launch/slam.launch"/>
+  <include file="$(find linorobot)/launch/include/localization.launch"/>
+  <include file="$(find linorobot)/launch/include/move_base/move_base_2wd.launch" />
+  <include file="$(find linorobot)/launch/include/safety_controller.launch"/>
+  <include file="$(find linorobot)/launch/include/cmd_vel_mux.launch"/>
+
+</launch>

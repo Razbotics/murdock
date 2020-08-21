@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="linorobot" name="safety_controller" type="safety_controller_ultrasonic.py" output="screen">
+   <param name="escape_vel" value= "0.2" />
+   <param name="threshold_val" value= "15" />
+   <param name="danger_val" value= "10" />
+   </node>
+</launch>

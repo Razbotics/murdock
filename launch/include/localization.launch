@@ -1,0 +1,24 @@
+<launch>
+    <!-- Define type of localization -->
+    <arg name="two_d_mode" default="true"/>
+    <!-- Print diagnostic filter -->
+    <arg name="diagnostics" default="true"/>
+    <!-- Type of filter -->
+    <!-- ekf= Extended Kalman Filter -->
+    <!-- ukf= Unscented Kalman Filter -->
+    <arg name="filter" default="ukf"/>
+
+    <!-- Launch EKF localization -->
+    <node pkg="robot_localization" type="$(arg filter)_localization_node" name="$(arg filter)_localization" output="screen">
+        <!-- Load definition filter -->
+        <rosparam command="load" file="$(find linorobot)/param/$(arg filter)/robot_localization.yaml" />
+        <!-- Set 3D localization -->
+        <param name="two_d_mode" value="$(arg two_d_mode)" />
+        <remap from="odometry/filtered" to="odom" />
+        <!-- Print diagnostic -->
+        <param name="print_diagnostics" value="$(arg diagnostics)" />
+        <!-- Remap inital pose. Compliant with RVIZ -->
+        <remap from="/set_pose" to="/initialpose" />
+    </node>
+    
+</launch>

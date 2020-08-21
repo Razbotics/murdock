@@ -1,0 +1,6 @@
+ <launch>
+  <node pkg="twist_mux" type="twist_mux" name="twist_mux">
+      <rosparam command="load" file="$(find linorobot)/param/twist_mux/twist_mux.yaml" />
+      <remap from="cmd_vel_out" to="/cmd_vel"/>
+    </node>
+</launch>
