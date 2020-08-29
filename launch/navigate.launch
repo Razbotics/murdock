@@ -4,6 +4,6 @@
     <node pkg="map_server" name="map_server"  type="map_server" args="$(arg map_file)" />
 
     <!-- AMCL used for localization -->
-<!--    <include file="$(find linorobot)/launch/include/amcl.launch" />-->
+    <include file="$(find linorobot)/launch/include/amcl.launch" />
     
 </launch>
