@@ -6,7 +6,7 @@
     <!-- Type of filter -->
     <!-- ekf= Extended Kalman Filter -->
     <!-- ukf= Unscented Kalman Filter -->
-    <arg name="filter" default="ukf"/>
+    <arg name="filter" default="ekf"/>
 
     <!-- Launch EKF localization -->
     <node pkg="robot_localization" type="$(arg filter)_localization_node" name="$(arg filter)_localization" output="screen">
