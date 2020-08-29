@@ -12,7 +12,7 @@
         <param name="publish_tf" value="false" />
         <param name="use_magnetic_field_msg" value="true" /> 
         <param name="world_frame" value="enu" />
-        <param name="orientation_stddev" value="0.1" />
+        <param name="orientation_stddev" value="0.2" />
         <param name="mag_bias_x" value="-1.97704426e-05" />
         <param name="mag_bias_y" value="-2.78622920e-05" />
         <param name="mag_bias_z" value="-7.95784217e-06" />
